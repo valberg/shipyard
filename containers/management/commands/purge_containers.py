@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
-from containers.models import Host, Container
+from containers.models import Container
+from hosts.models import Host
 from shipyard import utils
 
 class Command(BaseCommand):

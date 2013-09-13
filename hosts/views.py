@@ -18,8 +18,9 @@ from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from django.contrib import messages
 from django.utils.translation import ugettext as _
-from containers.models import Host
 from hosts.forms import HostForm
+from hosts.models import Host
+
 
 @login_required
 def index(request):

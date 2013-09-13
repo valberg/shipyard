@@ -12,7 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 from django.contrib import admin
-from containers.models import Host, Container
+from containers.models import Container
+from hosts.models import Host
+
 
 class HostAdmin(admin.ModelAdmin):
     list_display = ('name', 'hostname', 'port', 'enabled')

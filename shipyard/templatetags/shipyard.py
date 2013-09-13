@@ -1,8 +1,8 @@
 from django import template
 from django.template.defaultfilters import stringfilter
 from django.utils.translation import ugettext as _
-from containers.models import Host
 from datetime import datetime
+from hosts.models import Host
 
 register = template.Library()
 
