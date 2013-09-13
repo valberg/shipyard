@@ -16,7 +16,7 @@ ADD .docker/known_hosts /root/.ssh/known_hosts
 ADD .docker/run.sh /usr/local/bin/run
 RUN (find /opt/apps/shipyard -name "*.db" -delete)
 RUN (cd /opt/apps/shipyard && git remote rm origin)
-RUN (cd /opt/apps/shipyard && git remote add origin https://github.com/ehazlett/shipyard.git)
+RUN (cd /opt/apps/shipyard && git remote add origin https://github.com/valberg/shipyard.git)
 RUN /opt/ve/shipyard/bin/pip install -r /opt/apps/shipyard/requirements.txt
 RUN (cd /opt/apps/shipyard && /opt/ve/shipyard/bin/python manage.py syncdb --noinput)
 RUN (cd /opt/apps/shipyard && /opt/ve/shipyard/bin/python manage.py migrate)

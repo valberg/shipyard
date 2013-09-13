@@ -12,12 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 from django import forms
-from containers.models import Host
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Button
 from crispy_forms.bootstrap import FieldWithButtons, StrictButton, FormActions
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
+from hosts.models import Host
+
 
 def get_available_hosts():
     return Host.objects.filter(enabled=True)
