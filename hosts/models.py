@@ -1,10 +1,17 @@
-from django.db import models
-
-# Create your models here.
 import hashlib
 import json
-from containers.models import CONTAINER_KEY, IMAGE_KEY, Container, HOST_CACHE_TTL
+from containers.models import Container
 from shipyard import utils
+from docker import client
+from django.core.cache import cache
+from django.conf import settings
+from django.db import models
+import requests
+
+
+HOST_CACHE_TTL = getattr(settings, 'HOST_CACHE_TTL', 15)
+CONTAINER_KEY = '{0}:containers'
+IMAGE_KEY = '{0}:images'
 
 
 class Host(models.Model):
